@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    float sum = 0, avg;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    int *arr = (int*)malloc(n * sizeof(int));
+
+    printf("Enter elements:\n");
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    avg = sum / n;
+
+    printf("Sum = %.2f\n", sum);
+    printf("Average = %.2f\n", avg);
+
+    free(arr);
+
+    return 0;
+}
