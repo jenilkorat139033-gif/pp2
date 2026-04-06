@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+FILE *fp;
+char ch;
+int u=0,l=0,d=0,v=0,s=0;
+
+fp=fopen("data.txt","r");
+
+while((ch=fgetc(fp))!=EOF){
+if(ch>='A'&&ch<='Z') u++;
+else if(ch>='a'&&ch<='z') l++;
+else if(ch>='0'&&ch<='9') d++;
+else s++;
+
+if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u') v++;
+}
+
+printf("Upper=%d Lower=%d Digits=%d Vowels=%d Special=%d",u,l,d,v,s);
+}
