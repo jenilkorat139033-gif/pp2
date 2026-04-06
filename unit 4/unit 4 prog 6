@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main(){
+FILE *f1,*odd,*even;
+int n;
+
+f1=fopen("DATA.txt","w");
+for(int i=1;i<=10;i++)
+fprintf(f1,"%d ",i);
+fclose(f1);
+
+f1=fopen("DATA.txt","r");
+odd=fopen("ODD.txt","w");
+even=fopen("EVEN.txt","w");
+
+while(fscanf(f1,"%d",&n)!=EOF){
+if(n%2==0)
+fprintf(even,"%d ",n);
+else
+fprintf(odd,"%d ",n);
+}
+
+fclose(f1);
+fclose(odd);
+fclose(even);
+}
