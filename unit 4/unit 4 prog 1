@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    char text[100];
+
+    // Writing to file
+    fp = fopen("data.txt", "w");
+    printf("Enter text to write in file: ");
+    gets(text);
+    fprintf(fp, "%s", text);
+    fclose(fp);
+
+    // Reading from file
+    fp = fopen("data.txt", "r");
+    printf("\nContent of file:\n");
+    fgets(text, 100, fp);
+    printf("%s", text);
+    fclose(fp);
+
+    return 0;
+}
