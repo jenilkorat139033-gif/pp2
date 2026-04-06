@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(){
+FILE *f1,*f2;
+int n,r=0;
+
+f1=fopen("num.txt","w");
+scanf("%d",&n);
+fprintf(f1,"%d",n);
+fclose(f1);
+
+while(n!=0){
+r=r*10+n%10;
+n/=10;
+}
+
+f2=fopen("rev.txt","w");
+fprintf(f2,"%d",r);
+fclose(f2);
+}
